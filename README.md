@@ -1,10 +1,10 @@
-# Стартовая сборка gulp для вёрстки сайта.
+# Сборка gulp для вёрстки сайта.
 
-## Запуск
-### Установка зависимостей: `npm install`
-### Команда для разработки (Перемещает файлы из src в dist и запускает оттуда live-reload): `npm run dev`
+## Запуск:
+- Установка зависимостей: `npm install`
+- Команда для разработки: `npm run dev`
 
-## Сборка
+## Сборка:
 - Команда для сборки в production: `npm run build`
 - При сборке файлы HTML / CSS / JS минифицируются.
   Для CSS применяется [autoprefixer](https://www.npmjs.com/package/autoprefixer) и [группировка медиа-запросов](https://www.npmjs.com/package/gulp-group-css-media-queries). 
@@ -16,7 +16,7 @@
 - Скрипты собираются через [webpack-stream](https://www.npmjs.com/package/webpack-stream), что позволяет использовать import напрямую как из npm/yarn так и из соседних скриптов.
 - Картинки оптимизируются автоматически, некоторые параметры можно отредактировать в gulpfile.
 
-### SCSS структура
+### SCSS структура:
 
   |— scss/                 # Папка для файлов стилей.
     |- style.scss          # Главный файл стилей, в него подключаются все остальные.
@@ -29,7 +29,7 @@
     |— vendor/             # Папка для внешних загружаемых стилей, например библиотек.
       |- _normalize.scss   # Стандартный файл нормализации стилей.
 
-## Используется stylelint. Плагины в конфиге перечислены ниже:
+### Используется stylelint. Плагины в конфиге перечислены ниже:
 * https://www.npmjs.com/package/stylelint
 * https://www.npmjs.com/package/stylelint-declaration-block-no-ignored-properties
 * https://www.npmjs.com/package/stylelint-order
