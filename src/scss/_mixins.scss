@@ -1,0 +1,44 @@
+@use "sass:map";
+
+// sass-объект с популярными разрешениями экрана.
+$breakpoints: (
+  phone-s: 375px,
+  phone-m: 415px,
+  phone-l: 576px,
+  tablet: 768px,
+  tablet-l: 1024px,
+  desktop-s: 992px,
+  desktop-m: 1200px,
+  desktop-l: 1400px
+);
+
+// Принимает название breakpoint'a из перечисленных выше
+// и опционально значение max/min для отсчета ширины. max по умолчанию.
+// Не работает если переданного значения нет в объекте выше.
+// Пример:
+// @include mq(tablet) {...}
+@mixin mq($key, $from: max) {
+  $size: map-get($map: $breakpoints, $key: $key);
+
+  @media (#{$from}-width: $size) {
+    @content;
+  }
+}
+
+// Принимает название, путь к файлу(Указывать без расширения), жирность, и опцонально стиль шрифта.
+// Изначально предусмотрено подключение woff2 и woff.
+// Можно отредактировать под проект.
+// Пример:
+// @include font-face("Roboto", "../fonts/Roboto-Regular", 400);
+
+@mixin font-face($name, $url, $weight, $style: normal) {
+  @font-face {
+    src:
+      url("#{$url}.woff2") format("woff2"),
+      url("#{$url}.woff") format("woff");
+    font-family: $name;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
