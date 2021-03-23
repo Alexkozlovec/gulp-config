@@ -2,9 +2,11 @@
 
 // sass-объект с популярными разрешениями экрана.
 $breakpoints: (
-  phone-s: 375px,
-  phone-m: 415px,
-  phone-l: 576px,
+  phone-xs: 320px,
+  phone-s: 360px,
+  phone-m: 375px,
+  phone-l: 415px,
+  phone-xl: 576px,
   tablet: 768px,
   tablet-l: 1024px,
   desktop-s: 992px,
@@ -17,8 +19,8 @@ $breakpoints: (
 // Не работает если переданного значения нет в объекте выше.
 // Пример:
 // @include mq(tablet) {...}
-@mixin mq($key, $from: max) {
-  $size: map-get($map: $breakpoints, $key: $key);
+@mixin mq($resolution, $from: max) {
+  $size: map-get($map: $breakpoints, $key: $resolution);
 
   @media (#{$from}-width: $size) {
     @content;
@@ -41,4 +43,10 @@ $breakpoints: (
     font-style: $style;
     font-display: swap;
   }
+}
+
+@mixin list-reset() {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

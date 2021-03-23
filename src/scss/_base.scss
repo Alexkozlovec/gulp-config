@@ -1,3 +1,6 @@
+// Пример подключения шрифта (детальнее в файле миксинов):
+// @include font-face("Roboto", "../fonts/Roboto-Regular", 400);
+
 .page-html {
   height: 100%;
   box-sizing: border-box;
@@ -56,12 +59,6 @@ input {
   width: 1px;
   height: 1px;
   clip: rect(1px, 1px, 1px, 1px);
-}
-
-.list-reset {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 .container {
